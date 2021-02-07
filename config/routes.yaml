@@ -1,0 +1,15 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+
+calculateScore:
+    path: /calculateScore
+    controller: App\Infrastructure\Api\CalculateScoreController::__invoke
+
+publicListing:
+    path: /publicListing
+    controller: App\Infrastructure\Api\PublicListingController::__invoke
+
+qualityListing:
+    path: /qualityListing
+    controller: App\Infrastructure\Api\QualityListingController::__invoke

@@ -32,4 +32,24 @@ final class InFileSystemPersistence
         array_push($this->pictures, new Picture(7, 'https://www.idealista.com/pictures/7', 'SD'));
         array_push($this->pictures, new Picture(8, 'https://www.idealista.com/pictures/8', 'HD'));
     }
+
+    public function getAds(){
+        return $this->ads;
+    }
+
+    public function getPictures(){
+        return $this->pictures;
+    }
+
+    public function getPicturesAd($ad){
+        $picturesAd = [];
+        if(count($ad->getPictures()) == 1){
+            //$picturesAd = array_slice($this->pictures, 0, $ad->getPictures()[0]);
+            array_push($picturesAd ,$this->pictures[$ad->getPictures()[0]-1]);
+        }
+        if(count($ad->getPictures()) == 2){
+            $picturesAd = array_slice($this->pictures, $ad->getPictures()[0]-1, $ad->getPictures()[1]);
+        }
+        return $picturesAd;
+    }
 }

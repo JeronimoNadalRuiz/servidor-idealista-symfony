@@ -12,4 +12,17 @@ final class Picture
         private String $quality,
     ) {
     }
+
+    public function getId(){
+        return $this->id;
+    }
+
+    public function getUrl(){
+        return $this->url;
+    }
+
+    public function getQuality(){
+        return $this->quality;
+    }
+
 }
