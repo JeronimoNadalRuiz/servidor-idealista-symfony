@@ -17,7 +17,7 @@ final class PublicListingController
         session_start();
         $ads = $_SESSION["ads"];
         foreach ($ads as $ad) {
-            if($ad->getScore()>40){
+            if($ad->getScore()>=40){
                 array_push($this->publicAds, 
                 new PublicAd(
                     $ad->getId(), 
